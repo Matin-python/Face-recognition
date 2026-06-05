@@ -40,8 +40,8 @@ face-recognition-system/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/face-recognition-system.git
-cd face-recognition-system
+git clone https://github.com/Matin-python/Face-recognition.git
+cd face-recognition
 ```
 
 ### 2. Create a virtual environment (optional)
