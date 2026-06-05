@@ -1,0 +1,4 @@
+"Put the faces the code is going to recognize here.
+Put the image of a face with a '.jpg' extension.
+Note: Make sure your image has only one face in it."
+
