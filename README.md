@@ -41,10 +41,10 @@ face-recognition-system/
 
 ```bash
 git clone https://github.com/Matin-python/Face-recognition.git
-cd face-recognition
+cd Face-recognition
 ```
 
-### 2. Create a virtual environment (optional)
+### 2. Create a virtual environment (Optional)
 
 ```bash
 python -m venv venv
@@ -70,11 +70,30 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+## First-Time Setup for face_recognition
+
+The `face_recognition` library depends on `dlib`.
+
+Install dlib using:
+
+```bash
+pip install dlib
+```
+
+If you encounter installation errors related to building dlib, install CMake and try again:
+
+```bash
+pip install cmake
+pip install dlib
+```
+
+This step may not be necessary on all systems because precompiled dlib packages are available for many Python versions.
+
 ## Usage
 
 ### Add Known Faces
 
-Place images of people you want the system to recognize inside the `known_faces` folder.
+Before running the application, you must add at least one image to the `known_faces` directory.
 
 Example:
 
@@ -85,7 +104,9 @@ known_faces/
 ├── Sara.jpg
 ```
 
-The filename (without extension) will be used as the person's name.
+The filename (without the extension) will be used as the person's name during recognition.
+
+**Important:** If the `known_faces` folder is empty, the system will not be able to recognize anyone.
 
 ### Run the Application
 
@@ -104,8 +125,8 @@ python main.py
 3. Opens the webcam feed.
 4. Detects faces in each frame.
 5. Compares detected faces against known encodings.
-6. Finds the closest match using face distance.
-7. Draws a bounding box and displays the person's name.
+6. Calculates face distances and finds the closest match.
+7. Draws a bounding box and displays the detected person's name.
 
 ## Example Output
 
@@ -160,8 +181,8 @@ This project is licensed under the MIT License.
 
 ## Author
 
-Mohammad Reza Bakhshandeh
+**Mohammad Reza Bakhshandeh**
 
-Bachelor's Degree in Electrical Engineering (Electronics)
+Electrical Engineering (Electronics) Graduate
 
-Learning Python, Computer Vision, and Artificial Intelligence.
+Interested in Python Development, Computer Vision, Machine Learning, and Artificial Intelligence.
