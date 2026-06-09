@@ -24,7 +24,7 @@ A Python application that performs real-time face detection and recognition usin
 ```text
 face-recognition-system/
 │
-├── main.py
+├── face recognize.py
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
@@ -111,7 +111,7 @@ The filename (without the extension) will be used as the person's name during re
 ### Run the Application
 
 ```bash
-python main.py
+python face recognize.py
 ```
 
 ### Controls
