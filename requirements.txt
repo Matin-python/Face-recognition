@@ -1,3 +1,4 @@
-face_recognition
-opencv-python
-numpy
+face-recognition==1.2.3
+opencv-python==4.10.0.84 
+numpy==1.26.4
+setuptools==80.10.2
