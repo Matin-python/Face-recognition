@@ -70,6 +70,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+
 ## Troubleshooting Installation
 
 The `face_recognition` library depends on `dlib`.
@@ -133,16 +134,49 @@ Some versions of `dlib` are not compatible with **NumPy 2.x**. In that case, ins
 > **Note:** Your installed version of **OpenCV (`cv2`)** must also be compatible with your NumPy version. Otherwise, the project may fail to run due to dependency conflicts.
 
 
+## Installing `face_recognition_models`
+
+If you encounter the following message when running the project:
+
+```text
+Please install `face_recognition_models` with this command before using `face_recognition`:
+```
+
+install the required models by running:
+
+```bash id="abmu67"
+pip install git+https://github.com/ageitgey/face_recognition_models
+```
+
+Then run the application again.
+
+If the same message still appears after installing `face_recognition_models`, the issue may be caused by an incompatible version of `setuptools`.
+
+Try installing an older version of `setuptools`:
+
+```bash id="6fjlwm"
+pip install setuptools==80.10.2
+```
+
+After downgrading `setuptools`, install `face_recognition_models` again:
+
+```bash id="2vdyqr"
+pip install git+https://github.com/ageitgey/face_recognition_models
+```
+
+Then run the application again.
+
+
 ## Tested Environment
 
 This project has been tested on:
 
 * Windows 11
 * Python 3.12
-* `face_recognition`
-* `dlib`
-* `opencv-python`
-* NumPy < 2.0
+* `face_recognition = 1.2.3`
+* `dlib = dlib-19.24.99-cp312-cp312-win_amd64.whl`
+* `opencv-python = 4.10.0.84`
+* `NumPy = 1.26.4`
 
 
 ## Usage
