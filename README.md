@@ -64,30 +64,86 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 3. Install dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## First-Time Setup for face_recognition
+## Troubleshooting Installation
 
 The `face_recognition` library depends on `dlib`.
 
-Install dlib using:
+First, try installing `dlib` using:
 
 ```bash
 pip install dlib
 ```
 
-If you encounter installation errors related to building dlib, install CMake and try again:
+If you encounter installation errors while building `dlib`, install **CMake** first and then try again:
 
 ```bash
 pip install cmake
 pip install dlib
 ```
 
-This step may not be necessary on all systems because precompiled dlib packages are available for many Python versions.
+> **Note:** Installing `CMake` may not be necessary on all systems because precompiled `dlib` packages are available for many Python versions.
+
+### Installing `dlib` Manually (Windows)
+
+If you are using **Windows** and still cannot install `dlib`, you can download a precompiled wheel from the following **community-maintained** repository:
+
+https://github.com/Murtaza-Saeed/Dlib-Precompiled-Wheels-for-Python-on-Windows-x64-Easy-Installation
+
+Download the wheel file that matches your Python version.
+
+For example, if you are using **Python 3.12.x**, download:
+
+```text
+dlib-19.24.99-cp312-cp312-win_amd64.whl
+```
+
+After downloading the file:
+
+1. Move the `.whl` file to a folder of your choice.
+2. Open **Command Prompt** in that folder.
+3. Run the following command:
+
+```bash
+pip install dlib-19.24.99-cp312-cp312-win_amd64.whl
+```
+
+> **Tip:** In Windows, you can quickly open Command Prompt in a folder by typing **`cmd`** in the File Explorer address bar and pressing **Enter**.
+
+> **Note:** This repository is maintained by the community and is not an official `dlib` release. If it becomes unavailable or does not contain a wheel for your Python version, you may need to build `dlib` from source or look for another compatible precompiled wheel.
+
+
+## NumPy Compatibility
+
+If you encounter the following error:
+
+```text
+RuntimeError: Unsupported image type, must be 8bit gray or RGB image.
+```
+
+your installed version of **NumPy** is likely too new.
+
+Some versions of `dlib` are not compatible with **NumPy 2.x**. In that case, install a version of NumPy **below 2.0** (see `requirements.txt`).
+
+> **Note:** Your installed version of **OpenCV (`cv2`)** must also be compatible with your NumPy version. Otherwise, the project may fail to run due to dependency conflicts.
+
+
+## Tested Environment
+
+This project has been tested on:
+
+* Windows 11
+* Python 3.12
+* `face_recognition`
+* `dlib`
+* `opencv-python`
+* NumPy < 2.0
+
 
 ## Usage
 
